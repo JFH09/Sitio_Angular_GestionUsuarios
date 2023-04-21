@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Estudiante } from '../interfaces/estudiante';
 
 @Component({
   selector: 'app-card-info-estudiante',
   templateUrl: './card-info-estudiante.component.html',
   styleUrls: ['./card-info-estudiante.component.css']
 })
-export class CardInfoEstudianteComponent {
+export class CardInfoEstudianteComponent implements OnInit{
+  constructor(){}
 
+  public promedio: number = 85;
+
+  @Input() estudiante!: Estudiante;
+
+  ngOnInit(): void {
+
+    
+  }
+  sacarPromedio (matematicas:number, ciencias:number, ingles:number, fisica:number){
+
+    this.promedio = ((matematicas + ciencias + ingles + fisica)/ 4)
+    return this.promedio;
+  }
+
+  
 }

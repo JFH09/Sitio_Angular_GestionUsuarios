@@ -1,8 +1,5 @@
 <div class="contenidoEstudiantes">
-  <app-card-info-estudiante></app-card-info-estudiante>
-  <app-card-info-estudiante></app-card-info-estudiante>
-  <app-card-info-estudiante></app-card-info-estudiante>
-  <app-card-info-estudiante></app-card-info-estudiante>
-  <app-card-info-estudiante></app-card-info-estudiante>
-  <app-card-info-estudiante></app-card-info-estudiante>
+  <app-card-info-estudiante *ngFor="let estudiante of listaEstudiantes" [estudiante]="estudiante">
+  </app-card-info-estudiante>
+  <!-- <app-card-info-estudiante></app-card-info-estudiante> -->
 </div>
