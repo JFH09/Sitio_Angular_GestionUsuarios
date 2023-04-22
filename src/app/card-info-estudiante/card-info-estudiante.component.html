@@ -4,10 +4,18 @@
       <img src="https://cdn-icons-png.flaticon.com/512/6073/6073874.png"
         class="img-fluid rounded-start imagenEstudiante" style="padding-top: 15px;" alt="imagen-Usuario">
       <div class="notasMaterias">
-        <p class="card-text notaMateria">Matematicas: {{estudiante.notasMaterias.matematicas}}</p>
-        <p class="card-text notaMateria">Ciencias: {{estudiante.notasMaterias.ciencias}}</p>
-        <p class="card-text notaMateria">Ingles: {{estudiante.notasMaterias.ingles}}</p>
-        <p class="card-text notaMateria">Fisica: {{estudiante.notasMaterias.fisica}}</p>
+        <p class="card-text notaMateria">Matematicas: <span
+            [ngClass]="estudiante.notasMaterias.matematicas >= 66 ? 'aprobado':'perdido'">{{estudiante.notasMaterias.matematicas}}</span>
+        </p>
+        <p class="card-text notaMateria">Ciencias: <span
+            [ngClass]="estudiante.notasMaterias.ciencias >= 66 ? 'aprobado':'perdido'">{{estudiante.notasMaterias.ciencias}}</span>
+        </p>
+        <p class="card-text notaMateria">Ingles: <span
+            [ngClass]="estudiante.notasMaterias.ingles >= 66 ? 'aprobado':'perdido'">{{estudiante.notasMaterias.ingles}}</span>
+        </p>
+        <p class="card-text notaMateria">Fisica:<span
+            [ngClass]="estudiante.notasMaterias.fisica >= 66 ? 'aprobado':'perdido'">{{estudiante.notasMaterias.fisica}}</span>
+        </p>
       </div>
     </div>
     <div class="col-md-8">
@@ -22,7 +30,7 @@
 
         <p class="card-text">Observaciones: <br> {{estudiante.observaciones}}</p>
 
-        <a href="#" class="btn btn-primary m-1">Editar</a>
+        <a href="#" class="btn btn-primary m-1" (click)="editarEstudiante()">Editar</a>
         <a href="#" class="btn btn-danger m-1">Eliminar</a>
       </div>
     </div>

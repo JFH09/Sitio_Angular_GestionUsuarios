@@ -1,5 +1,8 @@
 <div class="contenidoEstudiantes">
-  <app-card-info-estudiante *ngFor="let estudiante of listaEstudiantes" [estudiante]="estudiante">
+  <h1 *ngIf="estudianteModificar">Gestion a: {{estudianteModificar.nombre}}</h1>
+  <app-card-info-estudiante *ngFor="let estudiante of listaEstudiantes" [estudiante]="estudiante"
+    (alumnoModificar)="alumnoModificar($event)">
   </app-card-info-estudiante>
+
   <!-- <app-card-info-estudiante></app-card-info-estudiante> -->
 </div>

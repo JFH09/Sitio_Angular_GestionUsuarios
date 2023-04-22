@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Estudiante } from '../interfaces/estudiante';
 
 @Component({
@@ -12,7 +12,7 @@ export class CardInfoEstudianteComponent implements OnInit{
   public promedio: number = 85;
 
   @Input() estudiante!: Estudiante;
-
+  @Output() alumnoModificar  =new EventEmitter<Estudiante>();
   ngOnInit(): void {
 
     
@@ -21,6 +21,11 @@ export class CardInfoEstudianteComponent implements OnInit{
 
     this.promedio = ((matematicas + ciencias + ingles + fisica)/ 4)
     return this.promedio;
+  }
+
+  editarEstudiante(){
+    alert("editar - " +this.estudiante.nombre);
+    this.alumnoModificar.emit(this.estudiante);
   }
 
   

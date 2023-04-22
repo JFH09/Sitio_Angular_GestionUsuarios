@@ -83,4 +83,11 @@ export class ContenidoEstudiantesComponent {
     observaciones: "Comprometido con el estudio"
   },
 ]
+
+public estudianteModificar !: Estudiante;
+
+alumnoModificar(estudiante: Estudiante){
+  this.estudianteModificar  = estudiante;
+}
+
 }
