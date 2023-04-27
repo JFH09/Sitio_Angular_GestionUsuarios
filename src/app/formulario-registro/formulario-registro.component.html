@@ -1,0 +1,12 @@
+<div>
+  <form [formGroup]="formularioRegistro" (submit)="registrarDatos()">
+    Nombre: <input type=" text" formControlName="nombre">
+    Edad: <input type="text" formControlName="edad">
+    Genero: <input type="text" formControlName="genero">
+    <button type="submit">Registrarme</button>
+  </form>
+  <br>
+  {{formularioRegistro.value | json}}
+  <br>
+  <h5>Nombre: </h5> {{formularioRegistro.get("nombre")?.value | json}}
+</div>

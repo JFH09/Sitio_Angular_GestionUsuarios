@@ -8,6 +8,8 @@ import { ContenidoEstudiantesComponent } from './contenido-estudiantes/contenido
 import { ListadoPaginasComponent } from './listado-paginas/listado-paginas.component';
 import { LogoComponent } from './logo/logo.component';
 import { CardInfoEstudianteComponent } from './card-info-estudiante/card-info-estudiante.component';
+import { FormularioRegistroComponent } from './formulario-registro/formulario-registro.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,9 +21,12 @@ import { CardInfoEstudianteComponent } from './card-info-estudiante/card-info-es
     ListadoPaginasComponent,
     LogoComponent,
     CardInfoEstudianteComponent,
+    FormularioRegistroComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
