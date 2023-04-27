@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FloatLabelType } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-formulario-registro',
@@ -9,15 +10,30 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class FormularioRegistroComponent implements OnInit {
 
   public formularioRegistro!: FormGroup;
+  public hide : Boolean = true;
+  public datos !: unknown;
 
   ngOnInit(): void {
+     
     this.formularioRegistro = new FormGroup({
-      nombre: new FormControl(),
+      nombres: new FormControl(),
+      apellidos: new FormControl(),
       edad: new FormControl(),
-      genero: new FormControl()
+      identificacion: new FormControl(),
+      curso: new FormControl(),
+      genero: new FormControl(),
+      perfil: new FormControl(),
+      email: new FormControl(),
+      password: new FormControl(),
+      celular: new FormControl(),
     })
   }
   registrarDatos(){
     console.log(this.formularioRegistro.value);
+
+    alert("Ingreso: \n"+ 
+    JSON.stringify(this.formularioRegistro.value))
   }
+
+
 }

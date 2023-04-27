@@ -10,6 +10,9 @@ import { LogoComponent } from './logo/logo.component';
 import { CardInfoEstudianteComponent } from './card-info-estudiante/card-info-estudiante.component';
 import { FormularioRegistroComponent } from './formulario-registro/formulario-registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormularioLoginComponent } from './formulario-login/formulario-login.component';
+import { MaterialModule } from './modulos/material/material.module';
 
 
 @NgModule({
@@ -22,11 +25,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LogoComponent,
     CardInfoEstudianteComponent,
     FormularioRegistroComponent,
+    FormularioLoginComponent,
   ],
   imports: [
     BrowserModule, 
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule, BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
