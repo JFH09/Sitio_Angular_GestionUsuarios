@@ -10,6 +10,7 @@ export class CardInfoEstudianteComponent implements OnInit{
   constructor(){}
 
   public promedio: number = 85;
+  public materia!: string;
 
   @Input() estudiante!: Estudiante;
   @Output() alumnoModificar  =new EventEmitter<Estudiante>();

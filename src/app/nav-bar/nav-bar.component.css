@@ -1,4 +1,6 @@
-
+::-webkit-scrollbar {
+    display: none;
+}
 .menuLateral{
     background: #0f0c29;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #24243e, #0e0c25);  /* Chrome 10-25, Safari 5.1-6 */
@@ -8,6 +10,7 @@
     height: 100%;
     padding: 15px;
     color: #ffffff;
+    overflow: scroll;
 }
 
 .contenidoNav{

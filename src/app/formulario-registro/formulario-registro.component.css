@@ -1,6 +1,6 @@
 .registro{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     background: #8E2DE2;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
@@ -76,11 +76,27 @@ mat-icon{
     grid-row: 2;
 }
 
-.edad{
+
+
+.dosCampos{
     grid-column: 3;
-    grid-row: 2;
+    grid-row:  2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
+.edad{
+
+    width: 38%;
+} 
+
+.genero{
+
+    width: 55%;
+
+} 
 .identificacion{
     grid-column: 1;
     grid-row:  3;
@@ -91,10 +107,6 @@ mat-icon{
     grid-row:  3;
 }
 
-.genero{
-    grid-column: 3;
-    grid-row:  3;
-}
 
 .perfil{
     grid-column: 3;
@@ -117,3 +129,4 @@ mat-icon{
     grid-column: 3;
     grid-row:  4;
 }
+

@@ -13,6 +13,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularioLoginComponent } from './formulario-login/formulario-login.component';
 import { MaterialModule } from './modulos/material/material.module';
+import { RouterModule, Routes } from '@angular/router';
+import { PanelPrincipalComponent } from './panel-principal/panel-principal.component';
+import { RoutingModule } from './modulos/routing/routing.module';
+import { MateriasPipe } from './pipes/materias.pipe';
+
 
 
 @NgModule({
@@ -26,12 +31,15 @@ import { MaterialModule } from './modulos/material/material.module';
     CardInfoEstudianteComponent,
     FormularioRegistroComponent,
     FormularioLoginComponent,
+    PanelPrincipalComponent,
+    MateriasPipe,
   ],
   imports: [
     BrowserModule, 
     FormsModule, 
     ReactiveFormsModule, BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

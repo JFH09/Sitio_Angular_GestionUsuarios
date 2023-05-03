@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { FloatLabelType } from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-registro',
@@ -12,6 +13,8 @@ export class FormularioRegistroComponent implements OnInit {
   public formularioRegistro!: FormGroup;
   public hide : Boolean = true;
   public datos !: unknown;
+
+  constructor(private router: Router){}
 
   ngOnInit(): void {
      
@@ -32,8 +35,36 @@ export class FormularioRegistroComponent implements OnInit {
     console.log(this.formularioRegistro.value);
 
     alert("Ingreso: \n"+ 
-    JSON.stringify(this.formularioRegistro.value))
+    JSON.stringify(this.formularioRegistro.value));
+
+    this.limpiarCampos();
   }
 
+   limpiarCampos(): void{
+    this.formularioRegistro.setValue({
+      nombres: "",
+      apellidos: "",
+      edad: "",
+      identificacion: "",
+      curso: "",
+      genero: "",
+      perfil: "",
+      email: "",
+      password: "",
+      celular: "",
+    });
+  }
+
+  cancelar(){
+    console.log("volviendo... de " + this.router.url);
+    switch(this.router.url){
+      case "/panelPrincipal/registro":
+        this.router.navigate(["panelPrincipal/listaEstudiantes"]);
+      break;
+      case "/registro":
+        this.router.navigate(["login"]);
+      break;
+    }
+  }
 
 }

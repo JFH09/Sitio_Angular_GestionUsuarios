@@ -1,5 +1,5 @@
 <div class="registro">
-  <app-logo></app-logo>
+  <!-- <app-logo></app-logo> -->
   <form [formGroup]="formularioRegistro" (submit)="registrarDatos()" class="example-form formulario">
     <h1>Registrarme</h1>
     <mat-form-field class="example-full-width nombre">
@@ -12,11 +12,22 @@
       <mat-icon matSuffix>person</mat-icon>
       <input matInput formControlName="apellidos">
     </mat-form-field>
-    <mat-form-field class="example-full-width edad">
-      <mat-label>Edad</mat-label>
-      <input type="number" matInput formControlName="edad">
-      <mat-icon matSuffix>accessibility new</mat-icon>
-    </mat-form-field>
+    <div class="dosCampos">
+      <mat-form-field class="example-full-width edad">
+        <mat-label>Edad</mat-label>
+        <input type="number" matInput formControlName="edad">
+        <mat-icon matSuffix>accessibility new</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="genero" appearance="fill">
+        <mat-label>Genero</mat-label>
+        <mat-select formControlName="genero">
+          <mat-option value="masculino">Masculino <mat-icon matSuffix>man</mat-icon>
+          </mat-option>
+          <mat-option value="femenino">Femenino <mat-icon matSuffix>woman</mat-icon>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <mat-form-field class="example-full-width identificacion">
       <mat-label>Identificación</mat-label>
       <input type="number" matInput formControlName="identificacion">
@@ -27,15 +38,7 @@
       <input type="number" matInput formControlName="curso">
       <mat-icon matSuffix>school</mat-icon>
     </mat-form-field>
-    <mat-form-field class="genero" appearance="fill">
-      <mat-label>Genero</mat-label>
-      <mat-select formControlName="genero">
-        <mat-option value="masculino">Masculino <mat-icon matSuffix>man</mat-icon>
-        </mat-option>
-        <mat-option value="femenino">Femenino <mat-icon matSuffix>woman</mat-icon>
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+
     <mat-form-field class="perfil" appearance="fill">
       <mat-label>Perfil</mat-label>
       <mat-select formControlName="perfil">
@@ -78,7 +81,7 @@
     </mat-form-field>
 
     <button type="submit" class="btn btnRegistrarme">Registrarme</button>
-    <button type="button" class="btn btn-outline-danger cancelar">Cancelar</button>
+    <button type="button" class="btn btn-danger cancelar" (click)="cancelar()">Cancelar</button>
     <!-- <br>
     {{formularioRegistro.value | json}}
     <br>
