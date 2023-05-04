@@ -1,0 +1,41 @@
+[
+    {
+        "listaEstudiantes" : [
+            {
+            "nombre": "Bruce",
+            "apellidos": "Wayne", 
+            "identificacion": 9999999,
+            "edad": 33,
+            "salon": 1002,
+            "promedio": 0,
+            "notasMaterias": {
+                "matematicas": 100,
+                "ciencias": 80,
+                "ingles": 82,
+                "fisica": 100
+            },
+            "observaciones": "Comprometido con el estudio"
+        }
+        ]
+    },
+    {
+        "listaAdministradores": [
+            {
+                "nombre": "Homero",
+                "apellidos": "Simpson", 
+                "identificacion": 1111111,
+                "edad": 43,
+                "genero": "Masculino",
+                "curso": 1002,
+                "promedio": 0,
+                "perfil": "Administrador",
+                "Materia": "Matematicas",
+                "Salario": 32131230, 
+                "email": "bruce@gmail.com",
+                "pass": "bruce2",
+                "telefono": 3009999999
+            }
+        ]
+    }
+    
+]

@@ -15,13 +15,16 @@ export class ListaEstudiantesDirective implements OnInit{
 
 
   ngOnInit(): void {
-    if(this.perfilEstudiante != this.mostrarUsuariosPerfil){
+    
+    if(this.perfilEstudiante == "Estudiante"){
       
-      this.renderer.setStyle(
-        this.element.nativeElement, "display", "none"
-      )
+      this.renderer.setStyle( this.element.nativeElement, "background-color", "#0088ff0f")
       
+     }else if(this.perfilEstudiante == "Administrador"){
+      this.renderer.setStyle( this.element.nativeElement, "background-color", "rgb(20 19 44)")
+      this.renderer.setStyle( this.element.nativeElement, "color", "#ffffff")
      }
+     // this.element.nativeElement, "display", "none"
    // .removeChild();
   }
 

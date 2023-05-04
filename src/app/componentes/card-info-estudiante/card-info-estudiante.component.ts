@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Estudiante } from '../../interfaces/estudiante';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card-info-estudiante',
@@ -7,16 +8,25 @@ import { Estudiante } from '../../interfaces/estudiante';
   styleUrls: ['./card-info-estudiante.component.css']
 })
 export class CardInfoEstudianteComponent implements OnInit{
-  constructor(){}
+ 
 
   public promedio: number = 85;
   public materia!: string;
 
   @Input() estudiante!: Estudiante;
   @Output() alumnoModificar  =new EventEmitter<Estudiante>();
-  ngOnInit(): void {
+  public mostrarUsuariosPerfil !: string;
+  constructor(private activateRoute: ActivatedRoute){
 
-    
+  }
+  ngOnInit(): void {
+    this.activateRoute.params.subscribe(parametro => {
+      for (const key in parametro) {
+        this.mostrarUsuariosPerfil = parametro[key];
+  
+      }
+      console.log(this.mostrarUsuariosPerfil)
+    });
   }
   sacarPromedio (matematicas:number, ciencias:number, ingles:number, fisica:number){
 

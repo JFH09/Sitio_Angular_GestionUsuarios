@@ -1,7 +1,6 @@
-<div class="card mb-3 `{{estudiante.perfil}}`">
+<div class="card mb-3 `{{estudiante.perfil}}`" appListaEstudiantes [perfilEstudiante]="estudiante.perfil">
   <div class="row g-0">
     <div class="col-md-4 ">
-      <h1>{{estudiante.perfil}}</h1>
       <img src=" https://cdn-icons-png.flaticon.com/512/6073/6073874.png"
         class="img-fluid rounded-start imagenEstudiante" style="padding-top: 15px;" alt="imagen-Usuario">
       <div class="notasMaterias">
@@ -24,6 +23,7 @@
         <h5 class="card-title"> Nombre: {{estudiante.nombre +  " " + estudiante.apellidos | uppercase}}</h5>
         <h6 class="card-text"> Identificación: {{estudiante.identificacion}}</h6>
         <p class="card-text">edad: {{estudiante.edad}}</p>
+        <p class="card-text">Perfil: {{estudiante.perfil | uppercase}}</p>
         <p class="card-text">salon: {{estudiante.salon}}</p>
         <p class="card-text" [ngClass]="promedio >= 70 ? 'aprobado':'perdido'">Promedio:
           {{sacarPromedio(estudiante.notasMaterias.matematicas,estudiante.notasMaterias.ciencias, estudiante.notasMaterias.ingles,estudiante.notasMaterias.fisica)}}
