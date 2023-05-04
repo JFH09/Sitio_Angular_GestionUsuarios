@@ -7,7 +7,7 @@ export class MateriasPipe implements PipeTransform {
 
   transform(value: string, ...args: string[]): unknown {
     if(args[0] == "Matematicas"){
-      return value + "::::"
+      return value + ":"
     }else{
       return "No se existe la materia"
     }

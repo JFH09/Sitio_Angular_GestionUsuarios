@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { Estudiante } from '../interfaces/estudiante';
+import { Component, OnInit } from '@angular/core';
+import { Estudiante } from '../../interfaces/estudiante';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contenido-estudiantes',
   templateUrl: './contenido-estudiantes.component.html',
   styleUrls: ['./contenido-estudiantes.component.css']
 })
-export class ContenidoEstudiantesComponent {
+export class ContenidoEstudiantesComponent implements OnInit {
   public listaEstudiantes: Estudiante[] = [{
     nombre: "Pepito",
     apellidos: "Perez", 
@@ -14,6 +15,7 @@ export class ContenidoEstudiantesComponent {
     edad: 13,
     salon: 304,
     promedio: 80, //sacar entre la suma y division de las materias...
+    perfil: "Estudiante",
     notasMaterias: {
       matematicas: 60,
       ciencias: 78,
@@ -29,6 +31,7 @@ export class ContenidoEstudiantesComponent {
     edad: 16,
     salon: 1102,
     promedio: 55,
+    perfil: "Estudiante",
     notasMaterias: {
       matematicas: 66,
       ciencias: 55,
@@ -44,6 +47,7 @@ export class ContenidoEstudiantesComponent {
     edad: 15,
     salon: 702,
     promedio: 75,
+    perfil: "Estudiante",
     notasMaterias: {
       matematicas: 70,
       ciencias: 68,
@@ -59,6 +63,7 @@ export class ContenidoEstudiantesComponent {
     edad: 8,
     salon: 101,
     promedio: 90,
+    perfil: "Administrador",
     notasMaterias: {
       matematicas: 90,
       ciencias: 88,
@@ -74,6 +79,7 @@ export class ContenidoEstudiantesComponent {
     edad: 16,
     salon: 1002,
     promedio: 95,
+    perfil: "Administrador",
     notasMaterias: {
       matematicas: 100,
       ciencias: 80,
@@ -82,9 +88,39 @@ export class ContenidoEstudiantesComponent {
     },
     observaciones: "Comprometido con el estudio"
   },
+  // {
+  //   nombre: "Bruce",
+  //   apellidos: "Wayne", 
+  //   identificacion: 9999999,
+  //   edad: 33,
+  //   salon: 1002,
+  //   promedio: 0,
+  //   notasMaterias: {
+  //     matematicas: 100,
+  //     ciencias: 80,
+  //     ingles: 82,
+  //     fisica: 100,
+  //   },
+  //   observaciones: "Comprometido con el estudio"
+  // },
 ]
 
 public estudianteModificar !: Estudiante;
+public mostrarUsuariosPerfil !: string;
+
+constructor(private activateRoute: ActivatedRoute){
+
+}
+
+  ngOnInit(): void {
+    this.activateRoute.params.subscribe(parametro => {
+      for (const key in parametro) {
+        this.mostrarUsuariosPerfil = parametro[key];
+  
+      }
+      console.log(this.mostrarUsuariosPerfil)
+    });
+  }
 
 alumnoModificar(estudiante: Estudiante){
   this.estudianteModificar  = estudiante;

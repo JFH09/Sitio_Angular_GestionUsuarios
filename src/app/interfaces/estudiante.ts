@@ -5,6 +5,7 @@ export  interface Estudiante {
     edad: number,
     salon: number,
     promedio: number,
+    perfil: string,
     notasMaterias: {
       matematicas: number,
       ciencias: number,

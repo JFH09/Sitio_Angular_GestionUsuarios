@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Estudiante } from '../interfaces/estudiante';
+import { Estudiante } from '../../interfaces/estudiante';
 
 @Component({
   selector: 'app-card-info-estudiante',
