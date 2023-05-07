@@ -18,6 +18,8 @@ import { PanelPrincipalComponent } from './componentes/panel-principal/panel-pri
 import { RoutingModule } from './modulos/routing/routing.module';
 import { MateriasPipe } from './pipes/materias.pipe';
 import { ListaEstudiantesDirective } from './directivas/lista-estudiantes.directive';
+import { CabecerasTamano20Directive } from './directivas/cabeceras-tamano20.directive';
+import { JuntarNombresPipe } from './pipes/juntar-nombres.pipe';
 
 
 
@@ -35,6 +37,8 @@ import { ListaEstudiantesDirective } from './directivas/lista-estudiantes.direct
     PanelPrincipalComponent,
     MateriasPipe,
     ListaEstudiantesDirective,
+    CabecerasTamano20Directive,
+    JuntarNombresPipe,
   ],
   imports: [
     BrowserModule, 

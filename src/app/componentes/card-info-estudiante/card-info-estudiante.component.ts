@@ -16,6 +16,7 @@ export class CardInfoEstudianteComponent implements OnInit{
   @Input() estudiante!: Estudiante;
   @Output() alumnoModificar  =new EventEmitter<Estudiante>();
   public mostrarUsuariosPerfil !: string;
+ public nombreCompleto!: string;
   constructor(private activateRoute: ActivatedRoute){
 
   }

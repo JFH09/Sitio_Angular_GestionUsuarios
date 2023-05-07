@@ -20,8 +20,9 @@
     </div>
     <div class="col-md-8">
       <div class="card-body cardEstudiante">
-        <h5 class="card-title"> Nombre: {{estudiante.nombre +  " " + estudiante.apellidos | uppercase}}</h5>
-        <h6 class="card-text"> Identificación: {{estudiante.identificacion}}</h6>
+        <h5 class="card-title" appCabecerasTamano20> Nombre:
+          {{nombreCompleto | juntarNombre: estudiante.nombre : estudiante.apellidos}}</h5>
+        <h5 class="card-text"> Identificación: {{estudiante.identificacion}}</h5>
         <p class="card-text">edad: {{estudiante.edad}}</p>
         <p class="card-text">Perfil: {{estudiante.perfil | uppercase}}</p>
         <p class="card-text">salon: {{estudiante.salon}}</p>
