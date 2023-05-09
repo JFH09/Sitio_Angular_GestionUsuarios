@@ -13,10 +13,12 @@ export class CardInfoEstudianteComponent implements OnInit{
   public promedio: number = 85;
   public materia!: string;
 
+
+
   @Input() estudiante!: Estudiante;
   @Output() alumnoModificar  =new EventEmitter<Estudiante>();
   public mostrarUsuariosPerfil !: string;
- public nombreCompleto!: string;
+  public nombreCompleto!: string;
   constructor(private activateRoute: ActivatedRoute){
 
   }

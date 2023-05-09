@@ -20,6 +20,7 @@ import { MateriasPipe } from './pipes/materias.pipe';
 import { ListaEstudiantesDirective } from './directivas/lista-estudiantes.directive';
 import { CabecerasTamano20Directive } from './directivas/cabeceras-tamano20.directive';
 import { JuntarNombresPipe } from './pipes/juntar-nombres.pipe';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -38,14 +39,15 @@ import { JuntarNombresPipe } from './pipes/juntar-nombres.pipe';
     MateriasPipe,
     ListaEstudiantesDirective,
     CabecerasTamano20Directive,
-    JuntarNombresPipe,
+    JuntarNombresPipe
   ],
   imports: [
     BrowserModule, 
     FormsModule, 
     ReactiveFormsModule, BrowserAnimationsModule,
     MaterialModule,
-    RoutingModule
+    RoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
