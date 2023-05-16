@@ -9,11 +9,17 @@ import { ContenidoEstudiantesComponent } from 'src/app/componentes/contenido-est
 const rutas: Routes = [
   { path: "panelPrincipal", component: PanelPrincipalComponent, children: [
     { path: "registro", component: FormularioRegistroComponent},
-    { path: "login", component: FormularioLoginComponent},
+    //{ path: "login", component: FormularioLoginComponent},
     { path: "listaEstudiantes", component: ContenidoEstudiantesComponent},
     { path: "listaEstudiantes/:parametro", component: ContenidoEstudiantesComponent},
   ]},
 ]
+
+// const rutas: Routes = [
+//   { path: "registro",loadChildren: ()=> 
+//     import('../modulosComponentes/registro/registro.module').then((m) => m.RegistroModule)
+//   },
+// ]
 
 @NgModule({
   declarations: [],

@@ -8,19 +8,29 @@ import { RoutingPanelPrincipalModule } from './routing-panel-principal.module';
 import { RoutingInicioModule } from './routing-inicio.module';
 
 
-  const rutas: Routes = [
-    { path: "login", component: FormularioLoginComponent},
-    { path:"registro", component: FormularioRegistroComponent},
-    { path: "panelPrincipal", component: PanelPrincipalComponent},
-    { path: "", redirectTo: "/login", pathMatch: "full"}
-  ] 
+const rutas: Routes = [
+    
+  { path: "login", component: FormularioLoginComponent},
+  { path:"registro", component: FormularioRegistroComponent},
+  { path: "panelPrincipal", component: PanelPrincipalComponent},
+  { path: "", redirectTo: "/login", pathMatch: "full"}
+] 
+
+  
+  // const rutas: Routes = [
+    
+  //   // { path: "login", component: FormularioLoginComponent},
+  //   // { path:"registro", component: FormularioRegistroComponent},
+  //   { path: "panelPrincipal", component: PanelPrincipalComponent},
+  //   { path: "", redirectTo: "/panelPrincipal", pathMatch: "full"}
+  // ] 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     RoutingPanelPrincipalModule,
-    RoutingInicioModule,
+   // RoutingInicioModule,
     RouterModule.forRoot(rutas)
     //  RoutingInicioModule
   ],

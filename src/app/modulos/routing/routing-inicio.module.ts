@@ -7,12 +7,10 @@ import { FormularioRegistroComponent } from 'src/app/componentes/formulario-regi
 
 const rutas : Routes = [
 
-    // {path: "registro", component: FormularioRegistroComponent},
-    // {path: "panelPrincipal", component: PanelPrincipalComponent}
-    // { path: "login", component: FormularioLoginComponent},
-    { path:"registro", component: FormularioRegistroComponent},
-    { path: "panelPrincipal", component: PanelPrincipalComponent},
-  ]
+  // { path: "login", loadChildren: ()=> 
+  // import('../modulosComponentes/login/login.module').then((m) => m.LoginModule)
+  // },
+]
 
 
 
